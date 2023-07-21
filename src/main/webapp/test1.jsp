@@ -35,7 +35,7 @@
             </ul>
         </li>
         <li>
-            <a href="">文章分类</a>
+            <a href="show.jsp">扶贫数据展示</a>
         </li>
         <li>
             <a href="contact.jsp">联系我们</a>
