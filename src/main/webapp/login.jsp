@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<form action="" class="login">
+<form action="/login" method="post">
     <p>Login</p>
-    <input type="text" placeholder="用户名">
-    <input type="password" placeholder="密码">
+    <input type="text" placeholder="用户名"NAME="username">
+    <input type="password" placeholder="密码"NAME="password">
     <input type="submit" class="btn" value="登录">
     <input type="submit" class="btn" value="点击注册" onclick="window.open('register.jsp')">
 </form>
