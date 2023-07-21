@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<form action="/login" method="post">
+<form action="/login" method="post" class="login">
     <p>Login</p>
     <input type="text" placeholder="用户名"NAME="username">
     <input type="password" placeholder="密码"NAME="password">
