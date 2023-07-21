@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="htlm3:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>htlm3</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="htlm3-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="htlm3:war exploded" />
+    </root>
+  </artifact>
+</component>

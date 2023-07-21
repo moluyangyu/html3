@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+    background: url("../images/5.jpg");
+    background-size: 100% 100%;
+}
+
+li{
+    list-style: none;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+.logo h4{
+    cursor: pointer;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.logo h4:hover{
+    color: #ff4861;
+}
+
+.nav{
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.nav>ul{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.nav>ul>li{
+    position: relative;
+    margin: 0 40px;
+}
+
+.nav ul li a{
+    color: #333;
+    text-decoration: none;
+}
+
+.nav ul li a:hover{
+    color: #ff4861;
+}
+
+.nav ul li ul{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background: #f2f2f2;
+    padding: 10px;
+    width: 80px;
+}
+
+.nav ul li li{
+    margin: 5px 0;
+}
+
+.nav>ul>li:hover ul{
+    display: block;
+}
+
+.banner{
+    width: 600px;
+    margin: 20px auto;
+}
+
+.banner img{
+    width: 100%;
+}
+
+.about{
+    width: 820px;
+    margin: auto;
+}
+.about h3{
+    display: flex;
+    align-content: center;
+    color: #ffaa14;
+    font-size: 24px;
+}
+
+.about h3::before{
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #ffaa14;
+}
+.about p{
+    line-height: 1.8;
+    margin: 20px 0;
+    text-indent: 2em;
+}
