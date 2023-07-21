@@ -1,4 +1,4 @@
-package com.example.htlm3;
+package main.java.com.example.htlm3;
 
 import java.io.*;
 import javax.servlet.http.*;
