@@ -10,8 +10,8 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 
-<a href="test1.html">
-    <input type="button" onclick="window.open('login.html')">
+<a href="test1.jsp">
+    <input type="button" onclick="window.open('login.jsp')">
 </a>
 </body>
 </html>
