@@ -1,4 +1,4 @@
-package main.java.com.example.htlm3.controller;
+package java.com.example.htlm3.controller;
 
 import main.java.com.example.htlm3.entity.user;
 import main.java.com.example.htlm3.service.serviceImpl.userServiceImpl;

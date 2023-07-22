@@ -30,6 +30,9 @@
             <a href="show.jsp">扶贫数据展示</a>
         </li>
         <li>
+            <a href="people.jsp">登录人员信息管理</a>
+        </li>
+        <li>
             <a href="contact.jsp">联系我们</a>
         </li>
         <li>
