@@ -30,4 +30,35 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
         return false;
 
     }
+
+    @Override
+    public boolean ChangeFamily(String family) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean ChangeLevel(String level) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean ChangeName(String name) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="DELETE FROM poor WHERE name = ?";
+        ps=con.prepareStatement(sql);
+        ps.setString(1,name);
+        String sql1="SELECT * from Poor where name = ?";
+        ps=con.prepareStatement(sql1);
+        ps.setString(1,name);
+        rs=ps.executeQuery();
+        if(rs.next()==false){
+            return  true;
+        }
+        return false;
+    }
 }

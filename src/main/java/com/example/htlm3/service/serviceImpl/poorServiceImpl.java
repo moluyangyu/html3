@@ -17,4 +17,16 @@ public class poorServiceImpl implements poorService {
         }
         return false;
     }
+
+    @Override
+    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        boolean a=poorDao.Delete(name);
+        if(a==true){
+            poorDao.closeResource();
+            return  true;
+        }
+        return  false;
+
+    }
 }
