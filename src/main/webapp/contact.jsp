@@ -48,10 +48,10 @@
         <h1><span class="test-primary">联系</span>我们</h1>
         <h4 style="text-align: center">如果有疑问请填写一下信息联系我们！</h4>
     </div>
-    <form action="test2.html">
+    <form action="submit.jsp">
         <div class="form-group">
             <label for="name">姓名</label>
-            <input type="text" name="email" id="name">
+            <input type="text" name="name" id="name">
         </div>
         <div class="form-group">
             <label for="name">邮箱</label>
@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
             <label for="name">反馈内容</label>
-            <textarea type="text" name="email" id="massage"></textarea>
+            <textarea type="text" name="content" id="massage"></textarea>
         </div>
         <button type="submit" class="btn">提交</button>
     </form>
