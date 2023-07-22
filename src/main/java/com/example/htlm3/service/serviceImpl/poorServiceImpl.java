@@ -29,4 +29,37 @@ public class poorServiceImpl implements poorService {
         return  false;
 
     }
+
+    @Override
+    public boolean ChangeLevel(String level,int id) throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        boolean a=poorDao.ChangeLevel(level,id);
+        if(a==true){
+            poorDao.closeResource();
+            return  true;
+        }
+        return  false;
+    }
+
+    @Override
+    public boolean ChangeFamily(String family,int id) throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        boolean a=poorDao.ChangeFamily(family,id);
+        if(a==true){
+            poorDao.closeResource();
+            return  true;
+        }
+        return  false;
+    }
+
+    @Override
+    public boolean ChangeName(String name,int id) throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        boolean a=poorDao.ChangeFamily(name,id);
+        if(a==true){
+            poorDao.closeResource();
+            return  true;
+        }
+        return  false;
+    }
 }
