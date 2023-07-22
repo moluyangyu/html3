@@ -32,29 +32,68 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
     }
 
     @Override
-    public boolean ChangeFamily(String family) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public boolean ChangeLevel(String level) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public boolean ChangeName(String name) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+    public boolean ChangeFamily(String family,int id) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="DELETE FROM poor WHERE name = ?";
+        String sql="UPDATE poor SET FamilySituation = ? WHERE id = ?";
+        ps=con.prepareStatement(sql);
+        ps.setString(1,family);
+        ps.setInt(2,id);
+        String sql1="SELECT * from Poor where id = ?";
+        ps=con.prepareStatement(sql1);
+        ps.setInt(1,id);
+        rs=ps.executeQuery();
+        String a=rs.getString("FamilySituation");
+        if(family.equalsIgnoreCase(a)){
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean ChangeLevel(String level,int id) throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="UPDATE poor SET PovertyLevel = ? WHERE id = ?";
+        ps=con.prepareStatement(sql);
+        ps.setString(1,level);
+        ps.setInt(2,id);
+        String sql1="SELECT * from Poor where id = ?";
+        ps=con.prepareStatement(sql1);
+        ps.setInt(1,id);
+        rs=ps.executeQuery();
+        String a=rs.getString("PovertyLevel");
+        if(level.equalsIgnoreCase(a)){
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean ChangeName(String name,int id) throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="UPDATE poor SET name = ? WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setString(1,name);
-        String sql1="SELECT * from Poor where name = ?";
+        ps.setInt(2,id);
+        String sql1="SELECT * from Poor where id = ?";
         ps=con.prepareStatement(sql1);
-        ps.setString(1,name);
+        ps.setInt(1,id);
+        rs=ps.executeQuery();
+        String a=rs.getString("name");
+        if(name.equalsIgnoreCase(a)){
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean Delete(int id) throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="DELETE FROM poor WHERE id = ?";
+        ps=con.prepareStatement(sql);
+        ps.setInt(1,id);
+        String sql1="SELECT * from Poor where id = ?";
+        ps=con.prepareStatement(sql1);
+        ps.setInt(1,id);
         rs=ps.executeQuery();
         if(rs.next()==false){
             return  true;
