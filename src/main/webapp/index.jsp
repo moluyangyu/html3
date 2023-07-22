@@ -18,7 +18,7 @@
             <a href="test1.jsp">首页</a>
         </li>
         <li>
-            <a href="picture.jsp">每日一图</a>
+            <a href="picture.jsp">扶贫图片</a>
             <ul>
                 <li>
                     <a href="">扶贫图</a>
