@@ -9,7 +9,7 @@ public class userDaoImpl extends baseDaoImpl implements userDao {
     @Override
     public user login(String username, String password) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="SELECT * from tuser where name = ? and password = ?";
+        String sql="SELECT * from yonghu where name = ? and password = ?";
         ps = con.prepareStatement(sql);
         ps.setString(1,username);
         ps.setString(2,password);
