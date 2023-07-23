@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 
         // 保存用户信息到数据库或其他存储中
         registerService registerService = new registerServicelmpl() ;
-        registerService.addService();
+        registerService.addService(String username,String password );
         // 注册成功，跳转到登录页面
         response.sendRedirect("login.html");
     }
