@@ -6,4 +6,5 @@ import java.sql.SQLException;
 
 public interface userDao extends baseDao {
     public user login(String username, String password) throws SQLException, ClassNotFoundException;
+    public void AddService(user user)throws SQLException,ClassNotFoundException;
 }

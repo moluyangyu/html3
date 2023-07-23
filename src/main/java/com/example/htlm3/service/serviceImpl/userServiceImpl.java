@@ -21,4 +21,9 @@ public class userServiceImpl implements userService {
         }
         return user;
     }
+
+    @Override
+    public void AddUser(String username, String password) throws SQLException {
+
+    }
 }
