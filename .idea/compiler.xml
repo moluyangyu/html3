@@ -9,5 +9,8 @@
         <module name="htlm3" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="html2" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

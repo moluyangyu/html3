@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<form action="" class="login">
+<form action="RegisterServlet" class="login">
     <p>Register</p>
-    <input type="text" placeholder="用户名">
+    <input type="text" placeholder="用户名" method="post">
     <input type="password" placeholder="密码">
     <input type="submit" class="btn" value="注册" onclick="window.open('login.jsp')">
 </form>
