@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/showPoor")
+@WebServlet("/show")
 public class PoorServlet extends HttpServlet {
     // 处理页面请求
     /*protected void doGet(HttpServletRequest request, HttpServletResponse response)

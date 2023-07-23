@@ -1,4 +1,5 @@
-<%--
+<%@ page import="main.java.com.example.htlm3.entity.Staff" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: LIU YI CHONG
   Date: 2023/7/22
@@ -61,145 +62,43 @@
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
-                    <th>具体情况</th>
-                    <th>地点</th>
+                    <th>负责项目</th>
+                    <th>年龄</th>
                     <th style="text-align: center">操作</th>
                 </tr>
             </thread>
             <tbody>
+            <%
+                // 获取人员信息列表
+                List<Staff> staffList = (List<Staff>) request.getAttribute("staffList");
+                if (staffList != null) {
+                    for (Staff staff : staffList) {
+            %>
             <tr>
-                <td>001</td>
-                <td>张三</td>
-                <td>小康</td>
-                <td>某某县城</td>
+                <td><%=staff.getId()%></td>
+                <td><%=staff.getName()%></td>
+                <td><%=staff.getAge()%></td>
                 <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
+                    <a href="editStaff.jsp?id=<%=staff.getId()%>">编辑</a>
+                    <a href="deleteStaff.jsp?id=<%=staff.getId()%>">删除</a>
                 </td>
             </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>李四</td>
-                <td>小康</td>
-                <td>某某市区</td>
-                <td>
-                    <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
-                        <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
-                    </form>
-                </td>
-            </tr>
+            <%
+                    }
+                }
+            %>
             </tbody>
         </table>
-    </section>
-</main>
+
+        <h2>添加人员信息</h2>
+        <form action="/addStaffServlet" method="post">
+            <input type="hidden" name="action" value="add">
+            Id:<input type="number" name="ID" required><br>
+            Name: <input type="text" name="姓名" required><br>
+            Age: <input type="number" name="年龄" required><br>
+            project<input type="text" name="负责项目" required>
+
+            <input type="submit" value="Add">
+        </form>
 </body>
 </html>
