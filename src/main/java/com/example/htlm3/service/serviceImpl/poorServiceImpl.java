@@ -2,9 +2,12 @@ package main.java.com.example.htlm3.service.serviceImpl;
 
 import main.java.com.example.htlm3.dao.daoimpl.poorDaoImpl;
 import main.java.com.example.htlm3.dao.poorDao;
+import main.java.com.example.htlm3.entity.Poor;
 import main.java.com.example.htlm3.service.poorService;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class poorServiceImpl implements poorService {
     @Override
@@ -61,5 +64,13 @@ public class poorServiceImpl implements poorService {
             return  true;
         }
         return  false;
+    }
+
+    @Override
+    public List<Poor> GetAll() throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        List<Poor> poors=new ArrayList<>();
+        poors=poorDao.GetAll();
+        return  poors;
     }
 }

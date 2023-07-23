@@ -1,10 +1,13 @@
 package main.java.com.example.htlm3.dao.daoimpl;
 
 import main.java.com.example.htlm3.dao.poorDao;
+import main.java.com.example.htlm3.entity.Poor;
 
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class poorDaoImpl extends baseDaoImpl implements poorDao {
     @Override
@@ -102,5 +105,23 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
             return  true;
         }
         return false;
+    }
+
+    @Override
+    public List<Poor> GetAll() throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="SELECT * FROM \"my_gauss\".\"Poor\"";
+        ps=con.prepareStatement(sql);
+        rs= ps.executeQuery();
+        List<Poor> poors=new ArrayList<>();
+        while (rs.next()){
+            Poor poor=new Poor();
+            poor.setId(rs.getInt("id"));
+            poor.setFamilySituation(rs.getString("FamilySituation"));
+            poor.setName(rs.getString("name"));
+            poor.setPoorLevel(rs.getString("PovertyLevel"));
+            poors.add(poor);
+        }
+        return poors;
     }
 }

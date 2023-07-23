@@ -16,7 +16,9 @@ public class Poor {
         FilingTime = filingTime;
         FamilySituation = familySituation;
     }
+    public Poor(){
 
+    }
     public Poor(String name, String poorLevel, String familySituation) {
         this.name = name;
         PoorLevel = poorLevel;
