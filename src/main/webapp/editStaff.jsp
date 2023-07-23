@@ -12,7 +12,7 @@
 <%-- 获取被编辑人员的信息 --%>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    Staff staff = staffDao.getstaffById(id);
+    Staff staff = staffService.getstaffById(id);
 %>
 <form method="post" action="/updateStaffServlet">
     <input type="hidden" name="id" value="<%=staff.getId()%>">
