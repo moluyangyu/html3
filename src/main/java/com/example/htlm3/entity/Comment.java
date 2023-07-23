@@ -1,8 +1,8 @@
 package main.java.com.example.htlm3.entity;
 public class Comment {
-    private int id;
-    private String username;
-    private String message;
+    public int id;
+    public String username;
+    public String message;
     public Comment(){
 
     }
