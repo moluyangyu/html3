@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentManager {
+/*public class CommentManager {
     private Connection connection;
 
     public CommentManager() {
@@ -20,7 +20,7 @@ public class CommentManager {
     }
 
     // 添加评论
-    public void addComment(Comment comment) {
+   /* public void addComment(Comment comment) {
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO comments (id, username, message) VALUES (?, ?, ?)");
             statement.setInt(1, comment.getId());
@@ -53,4 +53,4 @@ public class CommentManager {
 
         return comments;
     }
-}
+}*/

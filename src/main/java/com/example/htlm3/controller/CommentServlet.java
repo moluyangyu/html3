@@ -1,7 +1,7 @@
-package com.example.htlm3.controller;
+package main.java.com.example.htlm3.controller;
 
-import com.example.htlm3.entity.Comment;
-import com.example.htlm3.entity.CommentManager;
+
+import main.java.com.example.htlm3.entity.Comment;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,9 +1,11 @@
-package com.example.htlm3.entity;
+package main.java.com.example.htlm3.entity;
 public class Comment {
     private int id;
     private String username;
     private String message;
+    public Comment(){
 
+    }
     public int getId() {
         return id;
     }
