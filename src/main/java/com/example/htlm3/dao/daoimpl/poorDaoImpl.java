@@ -25,6 +25,9 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
             ps.setString(3,family);
             ps.setString(4,level);
             ps.setDate(5, Date.valueOf(currentDate));
+            String sql2="UPDATE poor SET number = ? WHERE id = 0";
+            ps=con.prepareStatement(sql2);
+            ps.setInt(1,i);
             return true;
         }
         return false;
