@@ -42,5 +42,5 @@ public class userDaoImpl extends baseDaoImpl implements userDao {
             ps.setString(3,user.getPassword());
         }
     }
-    }
+
 }

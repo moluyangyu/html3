@@ -19,16 +19,17 @@ public class PeopleServlet extends HttpServlet {
     // 处理页面请求
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("action");
+    /*    String action = request.getParameter("action");
+        int id=0;
         if (action != null) {
             switch (action) {
                 case "add":
-                    poorService.add();
+                    poorService.Add(action,action,action);
                     break;
                 case "edit":
-                    poorService.ChangeLevel(id);
-                    poorService.ChangeFamily(id);
-                    poorService.ChangeName(id);
+                    poorService.ChangeLevel(action,id);
+                    poorService.ChangeFamily(action,);
+                    poorService.ChangeName(action,id);
                 case "delete":
                     poorService.Delete(id);
                     break;
@@ -38,10 +39,12 @@ public class PeopleServlet extends HttpServlet {
         List<Poor> poorList = getPoorList();
         request.setAttribute("personList", poorList);
         request.getRequestDispatcher("person.jsp").forward(request, response);
+        */
+
     }
 
     // 获取人员列表
     poorService poorService = new poorServiceImpl();
-   poorService.getPoorList();
+   // poorService.getPoorLi st();
 }
 

@@ -1,9 +1,11 @@
 package main.java.com.example.htlm3.controller;
 
 import main.java.com.example.htlm3.service.registerService;
+import main.java.com.example.htlm3.service.serviceImpl.registerServiceImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,8 +33,17 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // 保存用户信息到数据库或其他存储中
-        registerService registerService = new registerServicelmpl() ;
-        registerService.addService(String username,String password );
+        registerService registerService = new registerServiceImpl() {
+        } ;
+       // registerService.addService();
+
+        try {
+            registerService.addService(username,password );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         // 注册成功，跳转到登录页面
         response.sendRedirect("login.html");
     }

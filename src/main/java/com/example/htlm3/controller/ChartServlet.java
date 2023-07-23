@@ -2,6 +2,7 @@ package main.java.com.example.htlm3.controller;
 
 import com.google.gson.Gson;
 import main.java.com.example.htlm3.service.chartService;
+import main.java.com.example.htlm3.service.serviceImpl.chartServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,7 +13,7 @@ import java.util.List;
 @WebServlet(name = "ChartServlet", value = "/ChartServlet")
 public class ChartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        chartService chartService = new chartServicelmpl();
+        chartService chartService = new chartServiceImpl();
         List<Integer> data=chartService.getdata();
 
 

@@ -14,10 +14,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/show")
+@WebServlet("/showPoor")
 public class PoorServlet extends HttpServlet {
     // 处理页面请求
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /*protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action != null) {
@@ -40,8 +40,9 @@ public class PoorServlet extends HttpServlet {
         request.getRequestDispatcher("show.jsp").forward(request, response);
     }
 
+     */
+
     // 获取人员列表
     poorService poorService = new poorServiceImpl();
-   poorService.getPoorList();
+   //poorService.getPoorList();
 }
-

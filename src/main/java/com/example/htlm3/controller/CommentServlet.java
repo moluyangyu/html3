@@ -20,10 +20,7 @@ public class CommentServlet extends HttpServlet {
         Comment comment = new Comment(0, username, message);
 
         // 获取评论管理器对象
-        CommentManager commentManager = new CommentManager();
 
-        // 添加评论
-        commentManager.addComment(comment);
 
         // 重定向到评论页面
         response.sendRedirect("contact.jsp");
