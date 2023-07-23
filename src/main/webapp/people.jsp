@@ -74,9 +74,9 @@
                 <td>某某县城</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -87,9 +87,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -100,9 +100,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -113,9 +113,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -126,9 +126,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -139,9 +139,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -152,9 +152,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -165,9 +165,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -178,9 +178,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
@@ -191,9 +191,9 @@
                 <td>某某市区</td>
                 <td>
                     <form action="" class="test">
-                        <input type="submit" value="修改" class="btn2">
+                        <input type="submit" value="修改" class="btn2" onclick="window.open('edit.jsp')">
                         <input type="submit" value="删除" class="btn2">
-                        <input type="submit" value="增加" class="btn2">
+                        <input type="submit" value="增加" class="btn2" onclick="window.open('add.jsp')">
                     </form>
                 </td>
             </tr>
