@@ -24,7 +24,10 @@
             <a href="test1.jsp">首页</a>
         </li>
         <li>
-            <a href="picture.jsp">扶贫图片</a>
+            <a href="">每日一图</a>
+        </li>
+        <li>
+            <a href="picture.jsp" target="_blank">扶贫图片</a>
         </li>
         <li>
             <a href="show.jsp">扶贫数据展示</a>
