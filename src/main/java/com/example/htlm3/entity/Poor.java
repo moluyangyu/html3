@@ -53,7 +53,7 @@ public class Poor {
         return FilingTime;
     }
 
-    public void setFilingTime(Date filingTime) {
+    public void setFilingTime(String filingTime) {
         FilingTime = filingTime;
     }
 

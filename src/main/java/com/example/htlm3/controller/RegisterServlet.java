@@ -45,6 +45,6 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
         // 注册成功，跳转到登录页面
-        response.sendRedirect("login.html");
+        response.sendRedirect("../webapp/login.html");
     }
 }

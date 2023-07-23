@@ -10,5 +10,5 @@ public interface staffDao extends baseDao{
     public Staff getStaffById(int id)throws SQLException,ClassNotFoundException;
     public void addStaff(String name,int id,int age,String project)throws SQLException,ClassNotFoundException;
     public void deleteStaffById(int id)throws SQLException,ClassNotFoundException;
-    public void updateStaff(String name,int id,int age,String project)throws SQLException,ClassNotFoundException;
+    public static void updateStaff(String name, int id, int age, String project)throws SQLException,ClassNotFoundException;
 }

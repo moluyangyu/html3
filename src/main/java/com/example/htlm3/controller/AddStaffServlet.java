@@ -17,6 +17,8 @@ public class AddStaffServlet extends HttpServlet {
         // 获取提交的表单数据
         String name = request.getParameter("name");
         int age = Integer.parseInt(request.getParameter("age"));
+        int id=Integer.parseInt(request.getParameter("id"));
+        String project=request.getParameter("project");
 
         // 创建新的staff对象
        Staff staff = new Staff();
@@ -29,6 +31,6 @@ public class AddStaffServlet extends HttpServlet {
         staffDao.addStaff(staff);
 
         // 重定向到人员列表页面
-        response.sendRedirect("people");
+        response.sendRedirect("../webapp/people.jsp");
     }
 }

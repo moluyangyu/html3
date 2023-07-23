@@ -78,6 +78,7 @@
                 <td><%=staff.getId()%></td>
                 <td><%=staff.getName()%></td>
                 <td><%=staff.getAge()%></td>
+                <td><%=staff.getProject()%></td>
                 <td>
                     <a href="editStaff.jsp?id=<%=staff.getId()%>">编辑</a>
                     <a href="deleteStaff.jsp?id=<%=staff.getId()%>">删除</a>
@@ -100,5 +101,7 @@
 
             <input type="submit" value="Add">
         </form>
+    </section>
+</main>
 </body>
 </html>
