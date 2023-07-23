@@ -41,6 +41,6 @@ public class AddStaffServlet extends HttpServlet {
         }
 
         // 重定向到人员列表页面
-        response.sendRedirect("../webapp/people.jsp");
+        response.sendRedirect("people.jsp");
     }
 }

@@ -30,7 +30,7 @@ public class PoorServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("poorList", poorList);
-        request.getRequestDispatcher("../webapp/show.jsp").forward(request, response);
+        request.getRequestDispatcher("show.jsp").forward(request, response);
 
 
     }

@@ -23,7 +23,7 @@ public class CommentServlet extends HttpServlet {
 
 
         // 重定向到评论页面
-        response.sendRedirect("contact.jsp");
+        response.sendRedirect("comment.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

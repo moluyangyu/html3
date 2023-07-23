@@ -2,11 +2,14 @@ package main.java.com.example.htlm3.controller;
 
 import main.java.com.example.htlm3.entity.Poor;
 import main.java.com.example.htlm3.entity.Staff;
+import main.java.com.example.htlm3.service.poorService;
+import main.java.com.example.htlm3.service.serviceImpl.poorServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 
 @WebServlet("/updatePoorServlet")
@@ -28,8 +31,28 @@ public class UpdatePoorServlet extends HttpServlet {
         poor.setFamilySituation(familySituation);
 
         // 调用staffDao进行更新操作
-        PoorDao.updatePoor(poor);
-
+        poorService poorservice=new poorServiceImpl();
+        try {
+            poorservice.ChangeFamily(familySituation,id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            poorservice.ChangeLevel(poorlevel,id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            poorservice.ChangeName(name,id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         // 重定向到人员列表页面
         response.sendRedirect("../webapp/show.jsp");
     }
