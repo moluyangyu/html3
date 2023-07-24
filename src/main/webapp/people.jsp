@@ -94,10 +94,9 @@
         <h2>添加人员信息</h2>
         <form action="/addStaffServlet" method="post">
             <input type="hidden" name="action" value="add">
-            Id:<input type="number" name="ID" required><br>
-            Name: <input type="text" name="姓名" required><br>
-            Age: <input type="number" name="年龄" required><br>
-            project<input type="text" name="负责项目" required>
+            Name: <input type="text" name="name" required><br>
+            Age: <input type="number" name="age" required><br>
+            project<input type="text" name="project" required>
 
             <input type="submit" value="Add">
         </form>

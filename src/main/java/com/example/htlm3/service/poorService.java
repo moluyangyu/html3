@@ -16,4 +16,5 @@ public interface poorService {
     public boolean ChangeName(String name,int id)throws  SQLException,ClassNotFoundException;
     //获得所有贫困户信息
     public List<Poor> GetAll()throws  SQLException,ClassNotFoundException;
+    public Poor getpoorById(int id)throws SQLException,ClassNotFoundException;
 }

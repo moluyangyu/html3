@@ -73,14 +73,14 @@
                     for (Poor poor : poorList) {
             %>
             <tr>
-
+                <td><%=poor.getId()%></td>
                 <td><%=poor.getName()%></td>
                 <td><%=poor.getPoorLevel()%></td>
 
                 <td><%=poor.getFamilySituation()%></td>
                 <td>
                     <a href="editPoor.jsp?id=<%=poor.getId()%>">编辑</a>
-                    <a href="deletePoor.jsp?id=<%=poor.getId()%>">删除</a>
+                    <a href="deletepoor.jsp?id=<%=poor.getId()%>">删除</a>
                 </td>
             </tr>
             <%
@@ -93,10 +93,10 @@
         <h2>添加人员信息</h2>
         <form action="/addPoorServlet" method="post">
             <input type="hidden" name="action" value="add">
-            Name: <input type="text" name="姓名" required><br>
-            PoorLevel: <input type="text" name="贫困情况" required><br>
+            Name: <input type="text" name="name" required><br>
+            PoorLevel: <input type="text" name="poorlevel" required><br>
 
-            FamilySituation<input type="text" name="家庭情况" required>
+            FamilySituation<input type="text" name="familySituation" required>
 
             <input type="submit" value="Add">
         </form>

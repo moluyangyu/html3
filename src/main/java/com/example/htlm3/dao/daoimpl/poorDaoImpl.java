@@ -2,6 +2,7 @@ package main.java.com.example.htlm3.dao.daoimpl;
 
 import main.java.com.example.htlm3.dao.poorDao;
 import main.java.com.example.htlm3.entity.Poor;
+import main.java.com.example.htlm3.entity.Staff;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -129,5 +130,22 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
             poors.add(poor);
         }
         return poors;
+    }
+
+    @Override
+    public Poor getpoorById(int id) throws SQLException, ClassNotFoundException {
+        openDb();
+        String sql="SELECT * from \"my_gauss\".\"Poor\" where id = ?";
+        ps = con.prepareStatement(sql);
+        ps.setInt(1,id);
+        rs=ps.executeQuery();
+        Poor poor=new Poor();
+        if(rs.next()){
+            poor.setPoorLevel(rs.getString("povertylevel"));
+            poor.setName(rs.getString("name"));
+            poor.setFamilySituation(rs.getString("familysituation"));
+            poor.setId(rs.getInt("id"));
+        }
+        return poor;
     }
 }

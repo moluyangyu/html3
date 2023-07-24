@@ -14,7 +14,7 @@ public class staffDaoImpl extends baseDaoImpl implements staffDao {
     @Override
     public List<Staff> getstaffList() throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="SELECT * FROM \"my_gauss\".\"Staff\"";
+        String sql="SELECT * FROM \"my_gauss\".\"staff\"";
         ps=con.prepareStatement(sql);
         rs= ps.executeQuery();
         List<Staff> staffs=new ArrayList<>();

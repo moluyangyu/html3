@@ -18,7 +18,7 @@ public class staffServiceImpl implements staffService {
     }
 
     @Override
-    public Staff getStaffById(int id)throws SQLException,ClassNotFoundException {
+    public Staff getstaffById(int id)throws SQLException,ClassNotFoundException {
         staffDao staffDao=new staffDaoImpl();
         Staff staff=new Staff();
         staff=staffDao.getStaffById(id);

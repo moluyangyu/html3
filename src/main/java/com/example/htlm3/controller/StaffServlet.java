@@ -31,7 +31,7 @@ public class StaffServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         request.setAttribute("staffList", staffList);
-        request.getRequestDispatcher("../webapp/people.jsp").forward(request, response);
+        request.getRequestDispatcher("people.jsp").forward(request, response);
 
 
     }

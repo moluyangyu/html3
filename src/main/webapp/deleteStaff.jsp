@@ -1,5 +1,7 @@
 <%@ page import="main.java.com.example.htlm3.entity.Staff" %>
-<%@ page import="main.java.com.example.htlm3.dao.staffDao" %><%--
+<%@ page import="main.java.com.example.htlm3.dao.staffDao" %>
+<%@ page import="main.java.com.example.htlm3.service.serviceImpl.staffServiceImpl" %>
+<%@ page import="main.java.com.example.htlm3.service.staffService" %><%--
   Created by IntelliJ IDEA.
   User: syh-77
   Date: 2023/7/23
@@ -18,7 +20,8 @@
 <%-- 获取被删除人员的信息 --%>
 <%
   int id = Integer.parseInt(request.getParameter("id"));
-  Staff staff = staffDao.getstaffById(id);
+  staffService staffService=new staffServiceImpl();
+  Staff staff = staffService.getstaffById(id);
 %>
 <form method="post" action="/deleteStaffServlet">
   <input type="hidden" name="id" value="<%=staff.getId()%>">

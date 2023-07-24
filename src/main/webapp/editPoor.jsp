@@ -1,5 +1,6 @@
 <%@ page import="main.java.com.example.htlm3.entity.Poor" %>
-<%@ page import="main.java.com.example.htlm3.service.poorService" %><%--
+<%@ page import="main.java.com.example.htlm3.service.poorService" %>
+<%@ page import="main.java.com.example.htlm3.service.serviceImpl.poorServiceImpl" %><%--
   Created by IntelliJ IDEA.
   User: syh-77
   Date: 2023/7/23
@@ -17,6 +18,7 @@
 <%-- 获取被编辑人员的信息 --%>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
+    poorService poorService=new poorServiceImpl();
     Poor poor = poorService.getpoorById(id);
 %>
 <form method="post" action="/updatePoorServlet">

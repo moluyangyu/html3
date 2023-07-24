@@ -74,4 +74,13 @@ public class poorServiceImpl implements poorService {
         poorDao.closeResource();
         return  poors;
     }
+
+    @Override
+    public Poor getpoorById(int id) throws SQLException, ClassNotFoundException {
+        poorDao poorDao=new poorDaoImpl();
+        Poor poor=new Poor();
+        poor=poorDao.getpoorById(id);
+        poorDao.closeResource();
+        return  poor;
+    }
 }

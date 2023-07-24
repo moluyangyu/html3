@@ -2,11 +2,10 @@
 <%@ page import="main.java.com.example.htlm3.dao.staffDao" %>
 <%@ page import="main.java.com.example.htlm3.entity.Poor" %>
 <%@ page import="main.java.com.example.htlm3.service.poorService" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="main.java.com.example.htlm3.entity.Staff" %>
-<%@ page import="main.java.com.example.htlm3.dao.staffDao" %>
 <%@ page import="main.java.com.example.htlm3.service.staffService" %>
+<%@ page import="main.java.com.example.htlm3.service.serviceImpl.staffServiceImpl" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +17,7 @@
 <%-- 获取被编辑人员的信息 --%>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
+    staffService staffService=new staffServiceImpl();
     Staff staff = staffService.getstaffById(id);
 %>
 <form method="post" action="/updateStaffServlet">

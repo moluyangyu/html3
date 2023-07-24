@@ -13,4 +13,5 @@ public interface poorDao extends baseDao{
     public boolean Delete(int id)throws  SQLException,ClassNotFoundException;
     public List<Poor> GetAll()throws  SQLException,ClassNotFoundException;
 
+    Poor getpoorById(int id)throws SQLException,ClassNotFoundException;
 }
