@@ -27,7 +27,7 @@ public class UpdatePoorServlet extends HttpServlet {
         poor.setId(id);
         poor.setName(name);
         poor.setPoorLevel(poorlevel);
-        poor.setFilingTime(filingTime);
+
         poor.setFamilySituation(familySituation);
 
         // 调用staffDao进行更新操作

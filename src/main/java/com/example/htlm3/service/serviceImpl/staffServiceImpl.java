@@ -13,6 +13,7 @@ public class staffServiceImpl implements staffService {
     public List<Staff> getstaffList()throws SQLException,ClassNotFoundException {
         staffDao staffDao=new staffDaoImpl();
         List<Staff> staffList=staffDao.getstaffList();
+        return  staffList;
     }
 
     @Override

@@ -32,7 +32,7 @@ public class AddPoorServlet extends HttpServlet {
 
 
 
-        poor.setFilingTime(filingTime);
+
         poor.setPoorLevel(poorLevel);
         poor.setFamilySituation(familySituation);
 
