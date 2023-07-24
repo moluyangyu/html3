@@ -1,23 +1,26 @@
 package main.java.com.example.htlm3.controller;
 
-import com.google.gson.Gson;
 import main.java.com.example.htlm3.entity.Integer;
 import main.java.com.example.htlm3.service.chartService;
 import main.java.com.example.htlm3.service.serviceImpl.chartServiceImpl;
 
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.PrintWriter;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ChartServlet", value = "/ChartServlet")
 public class ChartServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        chartService chartService = new chartServiceImpl();
-        List<Integer> data= null;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        List<Integer> dataList = new ArrayList<>();
+        chartService chartService=new chartServiceImpl();
         try {
-            data = chartService.getdata();
+            dataList=chartService.getdata();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -25,9 +28,16 @@ public class ChartServlet extends HttpServlet {
         }
 
 
-        // 将数据以JSON格式返回给前端
+        // 构造JSON格式的数据
+        String jsonData = "{\"data\": " + dataList + "}";
+
+        // 设置响应内容的类型为JSON
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(new Gson().toJson(data));
+
+        // 将JSON数据写入响应
+        PrintWriter out = response.getWriter();
+        out.print(jsonData);
+        out.flush();
     }
+
 }

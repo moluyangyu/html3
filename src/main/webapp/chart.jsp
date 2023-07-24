@@ -13,43 +13,52 @@
 </head>
 <body>
 <div id="chartContainer"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="myChart"></canvas>
 <script>
-    // 使用AJAX请求从后端获取数据
+    // 使用Ajax从后端获取数据
+    // 这里的URL是相对于JSP页面的路径，你需要根据具体情况修改
+    var url = "ChartServlet";
     $.ajax({
-        url: 'ChartServlet', // 与后端获取数据的Servlet路径对应
-        method: 'GET',
-        success: function(data) {
-            // 在成功回调函数中创建图表
-            createChart(data);
-        },
-        error: function() {
-            // 处理错误情况
+        url: url,
+        dataType: 'json',
+        success: function(response) {
+            // 获取从后端返回的数据
+            var data = response.data;
+
+            // 构造图表数据
+            var labels = [];
+            var values = [];
+            for (var i = 0; i < data.length; i++) {
+                labels.push(data[i].name);
+                values.push(data[i].age);
+            }
+
+            // 创建图表
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Age',
+                        data: values,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         }
     });
-
-    // 创建图表
-    function createChart(data) {
-        Highcharts.chart('chartContainer', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: '数据图表'
-            },
-            xAxis: {
-                categories: ['数据1', '数据2', '数据3'] // 根据实际情况设置横坐标标签
-            },
-            yAxis: {
-                title: {
-                    text: '值'
-                }
-            },
-            series: [{
-                name: '数据',
-                data: data // 使用后端获取的数据
-            }]
-        });
-    }
 </script>
 </body>
 </html>
