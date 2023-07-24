@@ -1,9 +1,11 @@
 package main.java.com.example.htlm3.controller;
 
-import main.java.com.example.htlm3.dao.staffDao;
 import main.java.com.example.htlm3.entity.Staff;
+import main.java.com.example.htlm3.service.serviceImpl.staffServiceImpl;
+import main.java.com.example.htlm3.service.staffService;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +19,7 @@ public class UpdateStaffServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int age = Integer.parseInt(request.getParameter("age"));
-        String project=request.getParameter("project")
+        String project=request.getParameter("project");
 
         // 创建新的staff对象
         Staff staff = new Staff();
@@ -27,7 +29,14 @@ public class UpdateStaffServlet extends HttpServlet {
         staff.setProject(project);
 
         // 调用staffDao进行更新操作
-        staff.updateStaff(staff);
+        staffService staffService=new staffServiceImpl();
+        try {
+            staffService.updateStaff(name,id,age,project);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         // 重定向到人员列表页面
         response.sendRedirect("../webapp/people.jsp");

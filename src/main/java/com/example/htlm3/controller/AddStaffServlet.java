@@ -2,8 +2,11 @@ package main.java.com.example.htlm3.controller;
 
 import main.java.com.example.htlm3.dao.staffDao;
 import main.java.com.example.htlm3.entity.Staff;
+import main.java.com.example.htlm3.service.serviceImpl.staffServiceImpl;
+import main.java.com.example.htlm3.service.staffService;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,14 +24,21 @@ public class AddStaffServlet extends HttpServlet {
         String project=request.getParameter("project");
 
         // 创建新的staff对象
-       Staff staff = new Staff();
+        Staff staff = new Staff();
         staff.setName(name);
         staff.setAge(age);
         staff.setId(id);
         staff.setProject(project);
 
         // 调用staffDao进行添加操作
-        staffDao.addStaff(staff);
+        staffService staffService=new staffServiceImpl();
+        try {
+            staffService.addStaff(name,id,age,project);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         // 重定向到人员列表页面
         response.sendRedirect("../webapp/people.jsp");

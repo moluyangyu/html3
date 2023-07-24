@@ -20,7 +20,15 @@ public class PoorServlet extends HttpServlet {
     // 处理页面请求
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Poor> poorList = getpoorList();
+        List<Poor> poorList = new ArrayList<>();
+        poorService poorService=new poorServiceImpl();
+        try {
+            poorList=poorService.GetAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         request.setAttribute("poorList", poorList);
         request.getRequestDispatcher("../webapp/show.jsp").forward(request, response);
 
