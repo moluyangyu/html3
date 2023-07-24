@@ -20,7 +20,7 @@ public class commentDaoImpl extends baseDaoImpl implements commentDao {
             int i= rs.getInt("total_rows");
             i++;
             LocalDate currentDate = LocalDate.now();
-            String sql1="INSERT INTO Comment (id,username,message)VALUES(?,?,?)";
+            String sql1="INSERT INTO \"my_gauss\".\"Comment\" (id,username,message)VALUES(?,?,?)";
             ps = con.prepareStatement(sql1);
             ps.setInt(1,comment.getId());
             ps.setString(2,comment.getUsername());
