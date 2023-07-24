@@ -13,6 +13,7 @@ public class staffServiceImpl implements staffService {
     public List<Staff> getstaffList()throws SQLException,ClassNotFoundException {
         staffDao staffDao=new staffDaoImpl();
         List<Staff> staffList=staffDao.getstaffList();
+        staffDao.closeResource();
         return  staffList;
     }
 
@@ -21,6 +22,7 @@ public class staffServiceImpl implements staffService {
         staffDao staffDao=new staffDaoImpl();
         Staff staff=new Staff();
         staff=staffDao.getStaffById(id);
+        staffDao.closeResource();
         return staff;
     }
 
@@ -28,17 +30,20 @@ public class staffServiceImpl implements staffService {
     public void addStaff(String name, int id, int age, String project) throws SQLException,ClassNotFoundException{
         staffDao staffDao=new staffDaoImpl();
         staffDao.addStaff(name,id,age,project);
+        staffDao.closeResource();
     }
 
     @Override
     public void deleteStaffById(int id) throws SQLException,ClassNotFoundException{
         staffDao staffDao=new staffDaoImpl();
         staffDao.deleteStaffById(id);
+        staffDao.closeResource();
     }
 
     @Override
     public void updateStaff(String name, int id, int age, String project)throws SQLException,ClassNotFoundException{
         staffDao staffDao=new staffDaoImpl();
         staffDao.updateStaff(name,id,age,project);
+        staffDao.closeResource();
     }
 }

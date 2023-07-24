@@ -21,16 +21,10 @@ public class RegisterServlet extends HttpServlet {
         // 获取用户输入的用户名和密码
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("confirmPassword");
+
 
         // 检查密码是否一致
-        if (!password.equals(confirmPassword)) {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<p>密码不一致，请重新输入。</p >");
-            out.println("返回注册");
-            return;
-        }
+
 
         // 保存用户信息到数据库或其他存储中
         registerService registerService = new registerServiceImpl() {
@@ -38,13 +32,13 @@ public class RegisterServlet extends HttpServlet {
        // registerService.addService();
 
         try {
-            registerService.addService(username,password );
+            registerService.addService(username,password);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         // 注册成功，跳转到登录页面
-        response.sendRedirect("/ogin.html");
+        response.sendRedirect("login.jsp");
     }
 }

@@ -21,6 +21,7 @@ public class commentServiceImpl implements commentService {
         commentDao commentDao=new commentDaoImpl();
         List<Comment> comments=new ArrayList<>();
         comments=commentDao.getComments();
+        commentDao.closeResource();
         return comments;
     }
 }

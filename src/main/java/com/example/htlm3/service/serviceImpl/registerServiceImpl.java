@@ -11,10 +11,11 @@ public class registerServiceImpl implements registerService {
     @Override
     public void addService(String username,String passowrd) throws SQLException, ClassNotFoundException {
         userDao userDao=new userDaoImpl();
-        user user=null;
+        user user=new user();
         user.setUsername(username);
         user.setPassword(passowrd);
         userDao.AddService(user);
+        userDao.closeResource();;
 
     }
 }

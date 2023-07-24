@@ -61,7 +61,6 @@
                     <th>ID</th>
                     <th>姓名</th>
                     <th>贫困等级</th>
-                    <th>脱贫时间</th>
                     <th>家庭情况</th>
                     <th style="text-align: center">操作</th>
                 </tr>
@@ -74,10 +73,10 @@
                     for (Poor poor : poorList) {
             %>
             <tr>
-                <td><%=poor.getId()%></td>
+
                 <td><%=poor.getName()%></td>
                 <td><%=poor.getPoorLevel()%></td>
-                <td><%=poor.getFilingTime()%></td>
+
                 <td><%=poor.getFamilySituation()%></td>
                 <td>
                     <a href="editPoor.jsp?id=<%=poor.getId()%>">编辑</a>
@@ -94,10 +93,9 @@
         <h2>添加人员信息</h2>
         <form action="/addPoorServlet" method="post">
             <input type="hidden" name="action" value="add">
-            Id:<input type="number" name="ID" required><br>
             Name: <input type="text" name="姓名" required><br>
             PoorLevel: <input type="text" name="贫困情况" required><br>
-            FilingTime：<input type="date" name="脱贫时间" required><br>
+
             FamilySituation<input type="text" name="家庭情况" required>
 
             <input type="submit" value="Add">

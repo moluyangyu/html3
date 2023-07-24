@@ -10,7 +10,7 @@ public class userDaoImpl extends baseDaoImpl implements userDao {
     @Override
     public user login(String username, String password) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="SELECT * from yonghu where name = ? and password = ?";
+        String sql="SELECT * from \"my_gauss\".\"yonghu\" where name = ? and password = ?";
         ps = con.prepareStatement(sql);
         ps.setString(1,username);
         ps.setString(2,password);
@@ -35,11 +35,12 @@ public class userDaoImpl extends baseDaoImpl implements userDao {
             int i= rs.getInt("total_rows");
             i++;
             LocalDate currentDate = LocalDate.now();
-            String sql1="INSERT INTO yonghu (id,name,password)VALUES(?,?,?)";
+            String sql1="INSERT INTO \"my_gauss\".\"yonghu\" (id,name,password)VALUES(?,?,?)";
             ps = con.prepareStatement(sql1);
-            ps.setInt(1,user.getId());
+            ps.setInt(1,i);
             ps.setString(2,user.getUsername());
             ps.setString(3,user.getPassword());
+            ps.executeUpdate();
         }
     }
 

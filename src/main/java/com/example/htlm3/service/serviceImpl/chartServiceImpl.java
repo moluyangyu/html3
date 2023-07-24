@@ -15,6 +15,7 @@ public class chartServiceImpl implements chartService {
         chartDao chartDao=new chartDaoImpl();
         List<Integer> aaa=new ArrayList<>();
         aaa=chartDao.getdata();
+        chartDao.closeResource();
         return  aaa;
     }
 }

@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<form action="RegisterServlet" class="login">
+<form action="/register" class="login"method="post">
     <p>Register</p>
-    <input type="text" placeholder="用户名" method="post">
-    <input type="password" placeholder="密码">
-    <input type="submit" class="btn" value="注册" onclick="window.open('login.jsp')">
+    <input type="text" placeholder="用户名"name="username">
+    <input type="password" placeholder="密码"name="password">
+    <input type="submit" class="btn" value="注册" >
 </form>
 </body>
 </html>

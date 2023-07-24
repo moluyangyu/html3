@@ -28,7 +28,7 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
             ps.setString(3,family);
             ps.setString(4,level);
             ps.setDate(5, Date.valueOf(currentDate));
-            String sql2="UPDATE poor SET number = ? WHERE id = 0";
+            String sql2="UPDATE Poor SET number = ? WHERE id = 0";
             ps=con.prepareStatement(sql2);
             ps.setInt(1,i);
             return true;
@@ -40,7 +40,7 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
     @Override
     public boolean ChangeFamily(String family,int id) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="UPDATE poor SET FamilySituation = ? WHERE id = ?";
+        String sql="UPDATE Poor SET FamilySituation = ? WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setString(1,family);
         ps.setInt(2,id);
@@ -58,10 +58,11 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
     @Override
     public boolean ChangeLevel(String level,int id) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="UPDATE poor SET PovertyLevel = ? WHERE id = ?";
+        String sql="UPDATE Poor SET PovertyLevel = ? WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setString(1,level);
         ps.setInt(2,id);
+        ps.executeUpdate();
         String sql1="SELECT * from Poor where id = ?";
         ps=con.prepareStatement(sql1);
         ps.setInt(1,id);
@@ -76,7 +77,7 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
     @Override
     public boolean ChangeName(String name,int id) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="UPDATE poor SET name = ? WHERE id = ?";
+        String sql="UPDATE Poor SET name = ? WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setString(1,name);
         ps.setInt(2,id);
@@ -94,7 +95,7 @@ public class poorDaoImpl extends baseDaoImpl implements poorDao {
     @Override
     public boolean Delete(int id) throws SQLException, ClassNotFoundException {
         openDb();
-        String sql="DELETE FROM poor WHERE id = ?";
+        String sql="DELETE FROM Poor WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setInt(1,id);
         String sql1="SELECT * from Poor where id = ?";

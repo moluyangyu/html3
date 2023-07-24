@@ -69,8 +69,9 @@ public class poorServiceImpl implements poorService {
     @Override
     public List<Poor> GetAll() throws SQLException, ClassNotFoundException {
         poorDao poorDao=new poorDaoImpl();
-        List<Poor> poors=new ArrayList<>();
+        List<Poor> poors;
         poors=poorDao.GetAll();
+        poorDao.closeResource();
         return  poors;
     }
 }

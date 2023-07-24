@@ -62,6 +62,7 @@ public class staffDaoImpl extends baseDaoImpl implements staffDao {
             ps.setString(2,name);
             ps.setString(3,project);
             ps.setInt(4,age);
+            ps.executeUpdate();
         }
     }
 
@@ -73,6 +74,7 @@ public class staffDaoImpl extends baseDaoImpl implements staffDao {
         String sql="DELETE FROM staff WHERE id = ?";
         ps=con.prepareStatement(sql);
         ps.setInt(1,id);
+        ps.executeUpdate();
     }
 
     @Override
@@ -84,5 +86,6 @@ public class staffDaoImpl extends baseDaoImpl implements staffDao {
         ps.setInt(2,age);
         ps.setString(3,project);
         ps.setInt(4,id);
+        ps.executeUpdate();
     }
 }

@@ -22,7 +22,7 @@ public class AddPoorServlet extends HttpServlet {
         String name = request.getParameter("name");
 
         String poorLevel=request.getParameter("poorlevel");
-        String filingTime=request.getParameter("filingTime");
+
         String familySituation=request.getParameter("familySituation");
 
 

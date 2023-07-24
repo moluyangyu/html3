@@ -25,6 +25,7 @@ public class commentDaoImpl extends baseDaoImpl implements commentDao {
             ps.setInt(1,comment.getId());
             ps.setString(2,comment.getUsername());
             ps.setString(3,comment.getMessage());
+            ps.executeUpdate();
         }
     }
 
@@ -41,6 +42,7 @@ public class commentDaoImpl extends baseDaoImpl implements commentDao {
             comment.setMessage(rs.getString("message"));
             comment.setUsername(rs.getString("username"));
             comments.add(comment);
+            ps.executeUpdate();
         }
         return comments;
     }

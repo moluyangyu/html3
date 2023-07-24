@@ -32,6 +32,5 @@ public class PoorServlet extends HttpServlet {
         request.setAttribute("poorList", poorList);
         request.getRequestDispatcher("show.jsp").forward(request, response);
 
-
     }
 }
