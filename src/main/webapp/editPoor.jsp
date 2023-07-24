@@ -1,6 +1,7 @@
 <%@ page import="main.java.com.example.htlm3.entity.Poor" %>
 <%@ page import="main.java.com.example.htlm3.service.poorService" %>
-<%@ page import="main.java.com.example.htlm3.service.serviceImpl.poorServiceImpl" %><%--
+<%@ page import="main.java.com.example.htlm3.service.serviceImpl.poorServiceImpl" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><%--
   Created by IntelliJ IDEA.
   User: syh-77
   Date: 2023/7/23

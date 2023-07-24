@@ -16,6 +16,7 @@ import java.util.Date;
 public class UpdatePoorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取提交的表单数据
+
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String poorlevel=request.getParameter("poorlevel");

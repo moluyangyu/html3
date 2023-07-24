@@ -16,7 +16,7 @@
         .btn2{
             width: 60px;
             height: 30px;
-            color: white;
+            color: black;
             background: #222;
             background: linear-gradient(45deg,red,orange,yellow,green,cyan,blue,purple,red);
             /*filter: blur(5px);*/
@@ -79,8 +79,8 @@
 
                 <td><%=poor.getFamilySituation()%></td>
                 <td>
-                    <a href="editPoor.jsp?id=<%=poor.getId()%>">编辑</a>
-                    <a href="deletepoor.jsp?id=<%=poor.getId()%>">删除</a>
+                    <a href="editPoor.jsp?id=<%=poor.getId()%>" style="text-decoration: none" class="btn2">编辑</a>
+                    <a href="deletepoor.jsp?id=<%=poor.getId()%>" style="text-decoration: none" class="btn2">删除</a>
                 </td>
             </tr>
             <%
